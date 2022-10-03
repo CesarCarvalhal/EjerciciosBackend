@@ -8,10 +8,15 @@
 		if ($_POST["funidad"] == "pulgada") {
 		$v_pulgadas = $_POST["fcantidad"];
 		$v_metros = $v_pulgadas * 0.0254;
-		echo $v_pulgadas."pulgada(s) = ".$v_metros." metro(s)";
-	} else {
+		echo $v_pulgadas." pulgada(s) = ".$v_metros." metro(s)";
+		} else if ($_POST["funidad"] == "yarda") {
+		$v_yardas = $_POST["fcantidad"];
+		$v_metros = $v_yardas * 0.9144;
+		echo $v_yardas." yarda(s) = ".$v_metros." metro(s)";
+
+		} else {
 		echo "Unidad no soportada";
-	}
+		}
 	}
 	?>
 	</p>
@@ -23,6 +28,10 @@
 
 	<input type="radio" id="pulgada_input" name="funidad" value="pulgada">
 	<label for="pulgada_input">Pulgada(s)</label><br>
+
+	<input type="radio" id="yarda_input" name="funidad" value="yarda">
+	<label for="yarda_input">Yarda(s)</label><br>
+
 	<input type="radio" id="otro_input" name="funidad" value="otro">
 	<label for="otro_input">Otro</label><br>
 
