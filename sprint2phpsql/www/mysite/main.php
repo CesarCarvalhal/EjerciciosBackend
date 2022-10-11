@@ -23,7 +23,7 @@
 				echo '<br>';
 				echo '<br>';
 				//Que cada elemento con ID <id> tenga un enlace href que redirija a la página:/detail.php?id=<id>
-				echo '<a href="detail.php?id='.$row[0].'">Ver detalles</a>';
+				echo '<a href="detail.php?juego_id='.$row[0].'">Ver detalles</a>';
 				
 			}
 		mysqli_close($db);
