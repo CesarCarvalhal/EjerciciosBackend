@@ -50,5 +50,6 @@ else:
     print("Incorrecto")
     contador = contador - 5
 print()
+
 #calcular puntuacion
 print("La puntuación es: ", contador)
