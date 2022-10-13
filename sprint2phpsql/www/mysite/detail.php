@@ -24,7 +24,9 @@
             $query2 = 'SELECT * FROM tComentarios WHERE juego_id='.$juego_id;
             $result2 = mysqli_query($db, $query2) or die('Query error');
             while ($row = mysqli_fetch_array($result2)) {
-                    echo '<li>'.$row['comentario'].'</li>';
+                    echo '<li>'.$row['comentario'].' '.$row['fecha_comentario'].'
+                    </li>';
+                    
                 }
                 mysqli_close($db);
             ?>
