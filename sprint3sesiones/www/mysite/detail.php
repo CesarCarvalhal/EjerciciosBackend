@@ -2,7 +2,9 @@
     $db = mysqli_connect('localhost', 'root', '1234', 'mysitedb') or die('Fail');
 ?>
 <html>
+    
     <body>
+        
         <?php
             if (!isset($_GET['juego_id'])) {
                 die('No se ha especificado un juego');
@@ -33,6 +35,7 @@
         </ul>
         <p>Deja un nuevo comentario:</p>
 <form action="/comment.php" method="post">
+<a href="logout.php?>Logout</a>';
     <textarea rows="4" cols="50" name="new_comment"></textarea><br>
     <input type="hidden" name="juego_id" value="<?php echo $juego_id; ?>">
     <input type="submit" value="Comentar">
