@@ -2,9 +2,8 @@
     $db = mysqli_connect('localhost', 'root', '1234', 'mysitedb') or die('Fail');
 ?>
 <html>
-    
     <body>
-        
+    <a href="/logout.php">Logout</a>
         <?php
             if (!isset($_GET['juego_id'])) {
                 die('No se ha especificado un juego');
@@ -23,19 +22,17 @@
     <h3>Comentarios:</h3>
     <ul>
         <?php
-            $query2 = 'SELECT * FROM tComentarios WHERE juego_id='.$juego_id;
-            $result2 = mysqli_query($db, $query2) or die('Query error');
+            $query2 = 'SELECT * FROM tComentarios c join tUsuarios u  on u.id=c.usuario_id WHERE c.juego_id='.$juego_id;
+            $result2 = mysqli_query($db, $query2) or die('Query Error');
             while ($row = mysqli_fetch_array($result2)) {
-                    echo '<li>'.$row['comentario'].' '.$row['fecha_comentario'].'
-                    </li>';
-                    
-                }
-                mysqli_close($db);
-            ?>
+                     echo '<li>'.$row['nombre'].' : ' .$row['comentario'].' '.$row['fecha_comentario'].'</li>';
+            }
+            mysqli_close($db);
+        ?>
+
         </ul>
         <p>Deja un nuevo comentario:</p>
 <form action="/comment.php" method="post">
-<a href="logout.php?>Logout</a>';
     <textarea rows="4" cols="50" name="new_comment"></textarea><br>
     <input type="hidden" name="juego_id" value="<?php echo $juego_id; ?>">
     <input type="submit" value="Comentar">
