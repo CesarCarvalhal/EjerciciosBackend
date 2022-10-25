@@ -1,11 +1,34 @@
-<html>
-  <head>
-    <meta charset="UTF-8" /> </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+
+			*{
+				box-sizing: border-box;
+				font-family: 'Poppins', sans-serif;
+			}
+
+      .estructuraFormulario{
+        text-align: center;
+        background-color: #dcdcdc;
+        margin-left: 42%;
+        margin-right: 42%;
+        margin-top: 15%;
+      }
+
+
+    </style>
+</head>
   <body>
     
-    <h1>Login</h1>
 
-    <form action="/login.php" id="formulario" method="post">
+    <form class="estructuraFormulario"action="/login.php" id="formulario" method="post">
+      <h1>Login</h1>
       <p>
         <input name="f_email" id="email" type="text" placeholder="E-mail" /><br />
       </p>
