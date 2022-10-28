@@ -4,15 +4,38 @@
 <html>
     <head>
         <style>
+            *{
+				box-sizing: border-box;
+				font-family: 'Poppins', sans-serif;
+			}
 
-            .conexionEStablecida{
-                font-size: 10px;
+            body{
+                background-color: #212121;
+                color: white;
+            }
+
+            .logout{
+                font-size: 15px;
                 text-align: right;
+                color: white;
+            }
+
+            .cajaComentario{
+                color:
+            }
+
+            .trailer{
+                color: white;
+            }
+
+            .cambioContrasena{
+                color:white;
             }
         </style>
     </head>
         <body>
-        <h1 class="conexionEStablecida">Conexion establecida - <a href="/logout.php">Logout</a></h1>
+        <a class="logout" href="/logout.php">Logout</a> - <a class="cambioContrasena" href="/cambioContrasena.php">Cambiar contraseña</a>
+
             <?php
                 if (!isset($_GET['juego_id'])) {
                     die('No se ha especificado un juego');
@@ -24,7 +47,7 @@
                     echo '<h1>'.$only_row[1].'</h1>';
                     echo '<img src="'.$only_row[2].'">';
                     echo '<br>';
-                    echo '<a href="'.$only_row[3].'">Trailer</a>';
+                    echo '<a class="trailer" href="'.$only_row[3].'">Trailer</a>';
                     echo '<p>Dificultad: '.$only_row[4].'</p>';
                     echo '<br>';
 
@@ -42,7 +65,7 @@
 
             </ul>
             <p>Deja un nuevo comentario:</p>
-    <form action="/comment.php" method="post">
+    <form class="cajaComentario"action="/comment.php" method="post">
         <textarea rows="4" cols="50" name="new_comment"></textarea><br>
         <input type="hidden" name="juego_id" value="<?php echo $juego_id; ?>">
         <input type="submit" value="Comentar">
